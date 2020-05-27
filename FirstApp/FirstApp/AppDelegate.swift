@@ -12,14 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirstAppLog(#function)
+        FirstAppLog("")
         
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
-        NSLog("app: \(app) url: \(url) sourceApplication: \(String(describing: sourceApplication))")
+        FirstAppLog("app: \(app) url: \(url) sourceApplication: \(String(describing: sourceApplication))")
         
         let urlScheme = url.scheme
         let urlQuery = url.query
@@ -30,19 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        FirstAppLog(#function)
+        FirstAppLog("")
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        FirstAppLog(#function)
+        FirstAppLog("")
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        FirstAppLog(#function)
+        FirstAppLog("")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        FirstAppLog(#function)
+        FirstAppLog("")
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        FirstAppLog("")
     }
 }
 

@@ -19,5 +19,7 @@ func FirstAppLog<T>(_ closure: @autoclosure () -> T, _ file: String = #file, _ f
         description = "\(instance)"
     }
     
+    #if DEBUG
     NSLog("[FirstApp] \(URL(fileURLWithPath: file).lastPathComponent) -> \(function) [\(line)]: \(description)")
+    #endif
 }
