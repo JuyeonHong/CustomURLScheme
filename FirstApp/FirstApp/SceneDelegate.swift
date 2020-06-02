@@ -17,11 +17,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // scene이 app에 추가될 때 호출
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         FirstAppLog("")
+        
+        // app이 scene을 선택했는데 구동되지 않은 상태면, 실행 후 url이 이 부분으로 들어옴
+        if let context = connectionOptions.urlContexts.first {
+            let sourceApplication = context.options.sourceApplication ?? ""
+            let url = context.url
+            let scheme = url.scheme ?? ""
+            let query = url.query ?? ""
+            
+            FirstAppLog("scheme: \(scheme)  source Application: \(sourceApplication)")
+            FirstAppLog("query: \(query) url: \(url)")
+        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         FirstAppLog("")
         
+        // 앱이 실행중이거나 메모리에서 중단되었을 때 url이 이 부분으로 들어옴
         if let context = URLContexts.first {
             let sourceApplication = context.options.sourceApplication ?? ""
             let url = context.url
