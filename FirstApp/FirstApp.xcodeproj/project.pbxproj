@@ -58,6 +58,7 @@
 		5726D49C247CF5DE0036D8CC /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				5726D4D1247D01050036D8CC /* CommonLog.swift */,
 				5726D49D247CF5DE0036D8CC /* AppDelegate.swift */,
 				5726D49F247CF5DE0036D8CC /* SceneDelegate.swift */,
 				5726D4A1247CF5DE0036D8CC /* ViewController.swift */,
@@ -65,7 +66,6 @@
 				5726D4A6247CF5DF0036D8CC /* Assets.xcassets */,
 				5726D4A8247CF5DF0036D8CC /* LaunchScreen.storyboard */,
 				5726D4AB247CF5DF0036D8CC /* Info.plist */,
-				5726D4D1247D01050036D8CC /* CommonLog.swift */,
 			);
 			path = FirstApp;
 			sourceTree = "<group>";
