@@ -9,6 +9,7 @@
 import Foundation
 
 func FirstAppLog<T>(_ closure: @autoclosure () -> T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+    #if DEBUG
     let instance = closure()
     let description: String
     
@@ -19,7 +20,6 @@ func FirstAppLog<T>(_ closure: @autoclosure () -> T, _ file: String = #file, _ f
         description = "\(instance)"
     }
     
-    #if DEBUG
     NSLog("[FirstApp] \(URL(fileURLWithPath: file).lastPathComponent) -> \(function) [\(line)]: \(description)")
     #endif
 }
