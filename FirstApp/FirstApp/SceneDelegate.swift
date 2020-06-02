@@ -23,11 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         FirstAppLog("")
         
         if let context = URLContexts.first {
-            let sourceApplication = context.options.sourceApplication
+            let sourceApplication = context.options.sourceApplication ?? ""
             let url = context.url
-            let annotation = context.options.annotation
+            let scheme = url.scheme ?? ""
+            let query = url.query ?? ""
             
-            FirstAppLog("source Application: \(String(describing: sourceApplication)) url: \(url) annotation: \(String(describing: annotation))")
+            FirstAppLog("scheme: \(scheme)  source Application: \(sourceApplication)")
+            FirstAppLog("query: \(query) url: \(url)")
         }
     }
     
